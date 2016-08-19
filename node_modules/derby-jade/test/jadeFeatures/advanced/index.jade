@@ -1,0 +1,18 @@
+index:
+  if expanded
+    | {{@content}}
+    view(name='expander', text='{{@title}}')
+  else
+    view(name='expander', text='{{@title}}', expand)
+
+expander:
+  a.item.-divider.center(on-click='toggle()')
+    if @expand
+      | ↓
+    else
+      | ↑
+    | {{@text}}
+    if @expand
+      | ↓
+    else
+      | ↑

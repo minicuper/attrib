@@ -1,0 +1,9 @@
+{
+  "generator-derby": {
+    "project": "attrib",
+    "apps": [
+      "app"
+    ],
+    "coffee": true
+  }
+}

@@ -1,0 +1,10 @@
+<index:>
+  {{if expanded}}{{@content}}
+    <view name="expander" text="{{@title}}"></view>
+  {{else}}
+    <view name="expander" text="{{@title}}" expand="expand"></view>
+  {{/}}
+<expander:>
+<a on-click="toggle()" class="item -divider center">
+    {{if @expand}}↓    {{else}}↑{{/}}{{@text}}
+    {{if @expand}}↓    {{else}}↑{{/}}</a>

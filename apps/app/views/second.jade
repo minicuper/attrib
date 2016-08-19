@@ -1,0 +1,8 @@
+index:
+  h1 Second
+  input(type="number" value="{{_page.a}}")
+  br
+  input(value="{{_page.exp}}")
+  br
+  view(is='comp2' exp="{{getExpression(_page.exp)}}")
+
