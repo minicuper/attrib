@@ -40,7 +40,8 @@ app.get 'home', '/', ->
   
 app.get 'second', ->
   @model.set '_page.a', 5
-  @model.set '_page.exp', '_page.a + 10'
+  @model.set '_page.b', 5
+#  @model.set '_page.exp', '_page.a + 10'
   
   @render()  
 
@@ -54,17 +55,17 @@ app.proto.removeAttr = (index)->
 deserialize = (string) =>
   eval(string)
   
-app.proto.getExpression = (str) ->
-  view = new View(views, 'name', '{{'+str+'}}', {} )
-  view.parse()
-
-  dynamicText = view?.template?.content[0]
-  expression = dynamicText?.expression
-
-  expression2 = deserialize(expression.serialize())
-
-  parentWrapper = new templates.ParentWrapper(
-        new templates.DynamicText(expression), expression2)
-
-  console.log 'parentWrapper', parentWrapper.serialize()
-  parentWrapper
+#app.proto.getExpression = (str) ->
+#  view = new View(views, 'name', '{{'+str+'}}', {} )
+#  view.parse()
+#
+#  dynamicText = view?.template?.content[0]
+#  expression = dynamicText?.expression
+#
+#  expression2 = deserialize(expression.serialize())
+#
+#  parentWrapper = new templates.ParentWrapper(
+#        new templates.DynamicText(expression), expression2)
+#
+#  console.log 'parentWrapper', parentWrapper.serialize()
+#  parentWrapper

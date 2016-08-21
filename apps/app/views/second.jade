@@ -1,8 +1,12 @@
 index:
-  h1 Second
+  | {{_page.a}}
   input(type="number" value="{{_page.a}}")
   br
-  input(value="{{_page.exp}}")
-  br
-  view(is='comp2' exp="{{getExpression(_page.exp)}}")
+  view(
+    is='comp2'
+    exp1="1"
+    exp2="{{_page.a}}"
+    exp3="{{2+_page.a}}"
+    exp4="{{if _page.a < 2}}hello{{else}}world{{/}}"
+  )
 

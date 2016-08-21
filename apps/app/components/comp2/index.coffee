@@ -10,5 +10,3 @@ module.exports = class Comp2
   init: ->
 
   create: ->
-    @model.start 'exp2', 'exp', (exp) ->
-      exp + 1
