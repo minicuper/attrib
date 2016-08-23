@@ -1,35 +1,35 @@
 index:
-    view(is='comp2' exp="{{_page.a + 5}}")
-    //a(href='{{pathFor("second")}}') second
-    //view(is="comp" attributes="{{_page.attrsObj}}")
-    //br
-    //br
+    //view(is='comp2' exp="{{_page.a + 5}}")
+    a(href='{{pathFor("second")}}') second
+    view(is="comp" attributes="{{_page.attrsObj}}")
+    br
+    br
     div(attributes="{{_page.attrsObj}}") Test Element
     br
-    | Attributes:
-    table
-      thead
-        tr
-          th Name
-          th Value
-          th
-
-
-      tbody
-        each _page.attrs as #attr, #i
-          tr
-            td
-              input(value="{{this[0]}}")
-            td
-              input(value="{{this[1]}}")
-            td
-              button(on-click="removeAttr(#i)") Remove attribute
+    //| Attributes:
+    //table
+    //  thead
+    //    tr
+    //      th Name
+    //      th Value
+    //      th
+    //
+    //
+    //  tbody
+    //    each _page.attrs as #attr, #i
+    //      tr
+    //        td
+    //          input(value="{{this[0]}}")
+    //        td
+    //          input(value="{{this[1]}}")
+    //        td
+    //          button(on-click="removeAttr(#i)") Remove attribute
     br
-    //button(on-click="addAttr()") Add attribute
-    //br
-    //br
-    //div(attributes="{{_page.attrsObj, {id: 'someId'}}}") Sequence expression (inspect this element)
-    //div(attributes="{{JSON.stringify(_page.attrsObj)}}") String expression 1 (inspect this element)
+    button(on-click="addAttr()") Add attribute
+    br
+    br
+    div(attributes="{{_page.attrsObj, {id: 'someId'}}}") Sequence expression (inspect this element)
+    div(attributes="{{JSON.stringify(_page.attrsObj)}}") String expression 1 (inspect this element)
     //div(attributes="hello world") String expression 2 (inspect this element)
     //
     //br

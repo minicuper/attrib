@@ -1,12 +1,36 @@
 index:
-  | {{_page.a}}
+  br
   input(type="number" value="{{_page.a}}")
   br
-  view(
-    is='comp2'
-    exp1="1"
-    exp2="{{_page.a}}"
-    exp3="{{2+_page.a}}"
-    exp4="{{if _page.a < 2}}hello{{else}}world{{/}}"
-  )
+  | Attributes:
+  table
+    thead
+      tr
+        th Name
+        th Value
+        th
+
+
+    tbody
+      each _page.attrs as #attr, #i
+        tr
+          td
+            input(value="{{this[0]}}")
+          td
+            input(value="{{this[1]}}")
+          td
+            button(on-click="removeAttr(#i)") Remove attribute
+  br
+  button(on-click="addAttr()") Add attribute
+  br
+  if _page.a > 2
+    view(
+      is='comp2'
+      attributes="{{ {style: _page.a} }}"
+      exp1="1"
+      exp2="{{_page.a}}"
+      exp3="{{2+_page.a}}"
+      exp4="{{if _page.a < 4}}hello{{else}}world{{/}}"
+      exp5="{{if _page.a < 4}}hello{{else}}world{{/}}"
+    )
 

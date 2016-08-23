@@ -39,15 +39,25 @@ app.get 'home', '/', ->
   @render()
   
 app.get 'second', ->
+  @model.set '_page.attrs', [
+    ['style', 'color:red'],
+    ['title', 'derby magic']
+  ]
+
+  @model.start '_page.attrsObj', '_page.attrs', 'attrs'
+  
   @model.set '_page.a', 5
   @model.set '_page.b', 5
+  @model.set '_page.obj', {field1: 1, field2: 'hello', field3: {a:1, b:2}}
+  @model.set '_page.arr', [1,2,3]
+  @model.set '_page.str', 'string'
 #  @model.set '_page.exp', '_page.a + 10'
   
   @render()  
 
 
 app.proto.addAttr = ->
-  @model.push '_page.attrs', []
+  @model.push '_page.attrs', ['aaaa', 'bbb']
 
 app.proto.removeAttr = (index)->
   @model.remove '_page.attrs', index
